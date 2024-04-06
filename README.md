@@ -21,3 +21,5 @@ if __name__ == '__main__':
 ## Important
 
 The larger the number of bits you specify in the ```key_generation(bit_size)``` function, the longer the program takes to run!
+
+If the length of the message to be encrypted exceeds the length of the modulus, then the RSA algorithm will not encrypt the message properly, and you will likely encounter an error.
