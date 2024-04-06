@@ -73,7 +73,11 @@ def get_message_from_signature(signature: int, public_key: int, n: int) -> str:
     """
 
     message = fast_exponentiation(signature, public_key, n)
-    return message.to_bytes((message.bit_length() + 7) // 8, 'big').decode()
+
+    try:
+        return message.to_bytes((message.bit_length() + 7) // 8, 'big').decode()
+    except UnicodeDecodeError:
+        print("Error: Unable to decode the message.")
 
 
 if __name__ == '__main__':
