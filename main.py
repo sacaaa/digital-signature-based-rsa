@@ -86,6 +86,7 @@ if __name__ == '__main__':
     message = args.message
     signature = signature_generate(p, q, message, private_key)
 
-    print(f'Signature: {signature}')
-    print(f'Verification: {signature_verify(message, signature, public_key, n)}')
-    print(f'Decrypted message: {get_message_from_signature(signature, public_key, n)}')
+    print(f'Signature: {signature}\n'
+          f'Public key: {public_key}\nModulus: {n}\n'
+          f'Verification: {signature_verify(message, signature, public_key, n)}\n'
+          f'Decrypted message: {get_message_from_signature(signature, public_key, n)}')
