@@ -38,6 +38,12 @@ def signature_generate(p: int, q: int, message: str, private_key: int) -> int:
     """
 
     message = int.from_bytes(message.encode(), 'big')
+
+    n = p * q
+    if n < message:
+        raise ValueError('Modulus is smaller than the message! Increase the bit size of the prime numbers '
+                         'in the key_generation(bit_size) function.')
+
     return chinese_remainder_theorem(p, q, message, private_key)
 
 
@@ -52,6 +58,7 @@ def signature_verify(message: str, signature: int, public_key: int, n: int) -> b
     """
 
     message = int.from_bytes(message.encode(), 'big')
+
     return message == fast_exponentiation(signature, public_key, n)
 
 
