@@ -2,24 +2,33 @@
 
 Digital signature based on RSA using Python and simple mathematical algorithms.
 
+## Features
+
+- Key generation
+- Signature generation
+- Signature verification
+- Message decryption from signature
+
+## Requirements
+
+- Python 3.6 or higher
+
 ## Usage
 
-``512``: the size of prime numbers stored in bits
+You can run the main script from the command line with the following command:
 
-```python
-if __name__ == '__main__':
-    p, q, n, private_key, public_key = key_generate(512)
+```bash
+python main.py <bit_size> "<message>"
+```
 
-    message = "Your text."
-    signature = signature_generate(p, q, message, private_key)
+Replace <bit_size> with the desired bit size for key generation and <message> with the message you want to sign.
 
-    print(f'Signature: {signature}')
-    print(f'Verification: {signature_verify(message, signature, public_key, n)}')
-    print(f'Decrypted message: {get_message_from_signature(signature, public_key, n)}')
+For example:
+```bash
+python main.py 512 "Hello, World!"
 ```
 
 ## Important
+The larger the number of bits you specify when calling the program from the command line, the longer the program takes to calculate!
 
-The larger the number of bits you specify in the ```key_generation(bit_size)``` function, the longer the program takes to calculate!
-
-If the length of the message to be encrypted exceeds the length of the modulus, then the RSA algorithm will not properly encrypt the message, and you will encounter a ```ValueError```. In this case, increase the bit size of the prime numbers in the ```key_generation(bit_size)``` function.
+If the length of the message to be encrypted exceeds the length of the modulus, then the RSA algorithm will not properly encrypt the message, and you will encounter a ```ValueError```. In this case, increase the bit size of the prime numbers when calling the program from the command line.
