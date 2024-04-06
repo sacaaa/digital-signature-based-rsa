@@ -1,3 +1,4 @@
+from argparse import ArgumentParser
 from helper import generate_prime, extended_euclidean, chinese_remainder_theorem, fast_exponentiation
 from random import randrange
 
@@ -76,9 +77,13 @@ def get_message_from_signature(signature: int, public_key: int, n: int) -> str:
 
 
 if __name__ == '__main__':
-    p, q, n, private_key, public_key = key_generate(512)
+    parser = ArgumentParser(description='Generate a digital signature for a message.')
+    parser.add_argument('bit_size', type=int, help='Bit size for key generation.')
+    parser.add_argument('message', type=str, help='The message to sign.')
+    args = parser.parse_args()
 
-    message = "Teszt szöveg a digitális aláírás ellenőrzéséhez."
+    p, q, n, private_key, public_key = key_generate(args.bit_size)
+    message = args.message
     signature = signature_generate(p, q, message, private_key)
 
     print(f'Signature: {signature}')
