@@ -4,7 +4,7 @@ Digital signature based on RSA using Python and simple mathematical algorithms.
 
 ## Usage
 
-512: the size of prime numbers stored in bits
+``512``: the size of prime numbers stored in bits
 
 ```python
 if __name__ == '__main__':
