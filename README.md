@@ -1,6 +1,6 @@
 # digital-signature-based-rsa
 
-Digital signature based on RSA using Python and simple mathematical algorithms.
+This repository contains a Python script that implements a digital signature system and provides functionality for decoding the signature. The script uses RSA-like encryption and decryption methods, along with simple mathematical algorithms for efficient computation.
 
 ## Features
 
