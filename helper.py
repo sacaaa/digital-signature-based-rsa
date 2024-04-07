@@ -3,20 +3,20 @@ from random import getrandbits
 
 def fast_exponentiation(base: int, exponent: int, mod: int) -> int:
     """Fast exponentiation algorithm.
-    
+
     :param base: Base number
     :param exponent: Exponent
     :param mod: Modulus
     :return: Result of the fast exponentiation
     """
-
+    
     result = 1
     base = base % mod
 
     while exponent > 0:
-        if exponent % 2 == 1:
+        if exponent & 1:
             result = (result * base) % mod
-        exponent //= 2
+        exponent >>= 1
         base = (base * base) % mod
 
     return result
