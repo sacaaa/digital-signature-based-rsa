@@ -18,28 +18,28 @@ This repository contains a Python script that implements a digital signature sys
 You can run the `encrypter.py` script from the command line with the following command:
 
 ```bash
-python encrypter.py <bit_size> "<message>"
+python signature_generator.py <bit_size> "<message>"
 ```
 
 Replace <bit_size> with the desired bit size for key generation and <message> with the message you want to sign.
 
 For example:
 ```bash
-python encrypter.py 512 "Hello, World!"
+python signature_generator.py 512 "Hello, World!"
 ```
 
 ## Decrypt
 You can run the `decrypter.py` script from the command line with the following command:
 
 ```bash
-python decrypter.py <signature> <public_key> <modulus>
+python signature_verifier.py <signature> <public_key> <modulus>
 ```
 
 Replace <signature>, <public_key>, and <modulus> with the signature to verify, the public key used for verification, and the modulus used for verification, respectively.
 
 For example:
 ```bash
-python decrypter.py 855924288 683203879 1548022963
+python signature_verifier.py 855924288 683203879 1548022963
 ```
 
 ## Important
