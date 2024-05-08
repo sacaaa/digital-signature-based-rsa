@@ -14,4 +14,4 @@ if __name__ == "__main__":
         verification = signature_verify(message, args.signature, args.public_key, args.modulus)
 
         print(f'Verification: {verification}\n'
-              f'Decrypted message: {message}')
+              f'Original message for presentation: {message}')
