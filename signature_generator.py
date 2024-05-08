@@ -66,6 +66,8 @@ def signature_verify(message: str, signature: int, public_key: int, n: int) -> b
 def get_message_from_signature(signature: int, public_key: int, n: int) -> str:
     """Get the message from the signature.
 
+    NOTE: this is only for presentation
+
     :param signature: Signature
     :param public_key: Public key
     :param n: Modulus
@@ -93,4 +95,4 @@ if __name__ == '__main__':
     print(f'Signature: {signature}\n'
           f'Public key: {public_key}\nModulus: {n}\n'
           f'Verification: {signature_verify(message, signature, public_key, n)}\n'
-          f'Decrypted message: {get_message_from_signature(signature, public_key, n)}')
+          f'Original message (only for presentation): {get_message_from_signature(signature, public_key, n)}')
