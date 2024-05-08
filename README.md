@@ -13,7 +13,7 @@ This repository contains a Python script that implements a digital signature sys
 
 - Python 3.6 or higher
 
-## Encrypt
+## Signature generate
 
 You can run the `encrypter.py` script from the command line with the following command:
 
@@ -28,7 +28,7 @@ For example:
 python signature_generator.py 512 "Hello, World!"
 ```
 
-## Decrypt
+## Signature verify
 You can run the `decrypter.py` script from the command line with the following command:
 
 ```bash
